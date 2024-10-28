@@ -173,13 +173,6 @@ class PlotWindow(QMainWindow):
         ax.set_ylabel("Close Price", fontsize=10, labelpad=10)
         ax.legend()
 
-        # Adding an arrow to the end of the line
-        last_date = data.index[-1]
-        last_close = data['Close'].iloc[-1]
-        ax.annotate(
-            '', xy=(last_date, last_close), xytext=(last_date, last_close * 0.95),
-            arrowprops=dict(facecolor='green', shrink=0.05, width=2, headwidth=8)
-        )
 
         # Adjust the layout to prevent x-axis label overlap
         self.figure.tight_layout(pad=2)  # Adds padding around the plot
